@@ -21,4 +21,5 @@ Imports: shiny (>= 1.7.0), shinydashboard, readxl, haven, dplyr, DT, ggplot2, pl
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/Atefehrashidi/HIViz
+URL: https://github.com/Atefehrashidi/HIViz
 BugReports: https://github.com/Atefehrashidi/HIViz/issues

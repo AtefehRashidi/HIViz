@@ -1,23 +1,25 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# 📊 HIV/AIDS Dashboard in Shiny
+# 📊 HIViz
 
 An R package for interactive visualization and exploration of key
 HIV/AIDS indicators, including prevalence, incidence, mortality, and
 treatment coverage, via a Shiny dashboard.
 
-# HIViz <img src="man/figures/hex.png" align="right" width="22%"/>
+<img src="man/figures/hex.png" align="right" width="22%"/>
 
 ![CRAN](https://www.r-pkg.org/badges/version/HIViz) ![Monthly
 downloads](https://cranlogs.r-pkg.org/badges/last-month/HIViz) ![Total
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/HIViz)
 ![License](https://img.shields.io/badge/license-GPL--3-yellow?style=flat)
 
+
 ## 📁 Required Dataset Structure
 
 The input dataset must include the following columns with exact names:
 
+- country: (e.g., Iran, Spain)
 - year: Numeric year (e.g., 2010, 2021)
 - sex: Gender classification (e.g., Male, Female)
 - age_group: Age brackets (e.g., 15–24, 25–34)
@@ -39,4 +41,4 @@ Issues and pull requests are welcome. Please open an issue to report
 bugs or suggest enhancements.
 
 ------------------------------------------------------------------------
-"# HIViz" 
+
