@@ -1,20 +1,18 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# 📊 HIViz
+# 📊 HIViz  <img src="man/figures/hex.png" align="right" width="22%"/>
 
 An R package for interactive visualization and exploration of key
 HIV/AIDS indicators, including prevalence, incidence, mortality, and
 treatment coverage, via a Shiny dashboard.
 
-<img src="man/figures/hex.png" align="right" width="22%"/>
-
+<!-- badges: start -->
 ![CRAN](https://www.r-pkg.org/badges/version/HIViz) ![Monthly
 downloads](https://cranlogs.r-pkg.org/badges/last-month/HIViz) ![Total
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/HIViz)
 ![License](https://img.shields.io/badge/license-GPL--3-yellow?style=flat)
 
-
+<!-- badges: end -->
 ## 📁 Required Dataset Structure
 
 The input dataset must include the following columns with exact names:
@@ -39,6 +37,3 @@ should contain clear, human-readable labels for transmission modes.
 
 Issues and pull requests are welcome. Please open an issue to report
 bugs or suggest enhancements.
-
-------------------------------------------------------------------------
-
