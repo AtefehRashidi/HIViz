@@ -35,7 +35,7 @@ should contain clear, human-readable labels for transmission modes.
 
 ## Installation
 
-The development version of the 'rencher' package is available for installation. You can install it from 
+The development version of the 'HIViz' package is available for installation. You can install it from 
 [Github](https://github.com/Atefehrashidi/HIViz) using:
 
 ``` r
