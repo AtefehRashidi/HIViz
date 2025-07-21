@@ -33,6 +33,16 @@ The input dataset must include the following columns with exact names:
 All column names must be spelled exactly as listed. The causes column
 should contain clear, human-readable labels for transmission modes.
 
+## Installation
+
+The development version of the 'rencher' package is available for installation. You can install it from 
+[Github](https://github.com/Atefehrashidi/HIViz) using:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("AtefehRashidi/HIViz")
+```
+
 ## 🤝 Contributing
 
 Issues and pull requests are welcome. Please open an issue to report
