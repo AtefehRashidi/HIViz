@@ -1,9 +1,11 @@
 # Libs
 
-
 ui <- shinydashboard::dashboardPage(
   shinydashboard::dashboardHeader(title = "HIV_Vizualization"),
   shinydashboard::dashboardSidebar(
+    shiny::radioButtons("dataSource", "Select data source:",
+                        choices = c( "Use sample data" = "sample"),
+                        selected = character(0)) ,
     shiny::fileInput("file", "Upload Data (.xlsx or .sav)", accept = c(".xlsx", ".sav")),
     shinyWidgets::pickerInput(
       inputId = "metrics",
@@ -12,6 +14,7 @@ ui <- shinydashboard::dashboardPage(
       selected = c("hiv_prevalence"),
       multiple = TRUE,
       options = list(`actions-box` = TRUE)
+       
     ),
     shinyWidgets::pickerInput("sexFilter", "Select Sex:", choices = c("Male", "Female"), selected = c("Male", "Female"), multiple = TRUE),
     shinyWidgets::pickerInput("ageGroupSelect", "Select Age Group(s):", choices = NULL, multiple = TRUE, options = list(`actions-box` = TRUE))
@@ -31,21 +34,41 @@ ui <- shinydashboard::dashboardPage(
 server <- function(input, output, session) {
   classic_pal <- as.character(paletteer::paletteer_d("ggthemes::calc"))# get the palette for all plots
   
-  user_data <- shiny::reactive({
+  user_data <- reactive({
+    shiny::req(input$dataSource)  # تا وقتی کاربر منبع دیتا رو مشخص نکرده، هیچی نشون نده
+    
+  if (input$dataSource == "sample") {
+    df <- sample_data
+  } else {
     shiny::req(input$file)
     ext <- tools::file_ext(input$file$name)
-    df <- switch(ext,
-                 "xlsx" = readxl::read_excel(input$file$datapath),  # import dataset
-                 "sav" = haven::read_sav(input$file$datapath),
+     df <- switch(ext,
+             "xlsx" = readxl::read_excel(input$file$datapath),
+              "sav" = haven::read_sav(input$file$datapath),
+                {
                  shiny::showNotification("Unsupported file type", type = "error")
-    )
-    shiny::req("year" %in% names(df))
-    df <- df |> dplyr::mutate(date = as.Date(paste0(year, "-01-01"))) # year to date
-    if ("age_group" %in% names(df)) {
-      shinyWidgets::updatePickerInput(session, "ageGroupSelect", choices = unique(df$age_group), selected = unique(df$age_group))
-    }
-    df
-  })
+                  return(NULL)
+               })
+  }
+    
+# اعتبارسنجی ساده
+  if (!"year" %in% names(df)) {
+    shiny::showNotification("Column 'year' not found in dataset.", type = "error")
+    return(NULL)
+  }
+    
+df <- df |>
+    dplyr::mutate(date = as.Date(paste0(year, "-01-01")))
+    
+  if ("age_group" %in% names(df)) {
+     shinyWidgets::updatePickerInput(session, "ageGroupSelect",
+                                 choices = unique(df$age_group),
+                                selected = unique(df$age_group))
+  }
+    
+  df
+})
+  
   #.........summary_table..............................  
   output$summary_table <- DT::renderDT({
     df <- user_data()

@@ -1,7 +1,11 @@
-#' Launch the Shiny App
+#' launch the HIViz Shiny App
 #'
 #' This function launches the Shiny application.
 #'
+#' @examples
+#'if(interactive()){
+#'HIViz::launchApp()
+#'}
 #' @export
 launchApp <- function() {
   appDir <- system.file("app", package = "HIViz")

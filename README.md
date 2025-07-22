@@ -1,4 +1,3 @@
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # 📊 HIViz  <img src="man/figures/hex.png" align="right" width="22%"/>
 
@@ -33,6 +32,7 @@ The input dataset must include the following columns with exact names:
 All column names must be spelled exactly as listed. The causes column
 should contain clear, human-readable labels for transmission modes.
 
+
 ## Installation
 
 The development version of the 'HIViz' package is available for installation. You can install it from 
@@ -42,6 +42,26 @@ The development version of the 'HIViz' package is available for installation. Yo
 # install.packages("remotes")
 remotes::install_github("AtefehRashidi/HIViz")
 ```
+
+
+## Installation
+
+You can install the development version of HIViz from [GitHub](https://github.com/AtefehRashidi/HIViz) with:
+
+``` r
+# install pak if not installed:
+install.packages("pak")
+
+# then install HIViz from GitHub:
+pak::pak("AtefehRashidi/HIViz")
+```
+Then run the Shiny App with:
+
+``` r
+HIViz::launchApp()
+```
+You can test the dashboard with the built-in `sample_data`.
+
 
 ## 🤝 Contributing
 

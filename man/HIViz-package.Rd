@@ -4,9 +4,9 @@
 \name{HIViz-package}
 \alias{HIViz}
 \alias{HIViz-package}
-\title{HIViz: Interactive Dashboard for HIV Epidemiology Data Visualization}
+\title{HIViz: Interactive Dashboard for HIV Data Visualization}
 \description{
-HIViz provides an interactive Shiny dashboard for visualizing and exploring key metrics related to HIV/AIDS, including prevalence, incidence, mortality, and treatment coverage. The dashboard is designed to work with a dataset containing specific columns with standardized names. These columns must be present in the input data for the app to function properly: year: Numeric year of the data (e.g. 2010, 2021); sex: Gender classification (e.g. Male, Female); age_group: Age bracket (e.g. 15–24, 25–34); hiv_prevalence: Estimated HIV prevalence percentage; hiv_incidence: Number of new HIV cases per year; aids_deaths: Total AIDS-related deaths; plhiv: Estimated number of people living with HIV; art_coverage: Percentage receiving antiretroviral therapy (ART); testing_coverage: HIV testing services coverage; causes: Description of likely HIV transmission cause (e.g. unprotected sex, drug use). The dataset structure must strictly follow this column naming convention for the dashboard to render correctly.
+An interactive Shiny dashboard for visualizing and exploring key metrics related to HIV/AIDS, including prevalence, incidence, mortality, and treatment coverage. The dashboard is designed to work with a dataset containing specific columns with standardized names. These columns must be present in the input data for the app to function properly: year: Numeric year of the data (e.g. 2010, 2021); sex: Gender classification (e.g. Male, Female); age_group: Age bracket (e.g. 15–24, 25–34); hiv_prevalence: Estimated HIV prevalence percentage; hiv_incidence: Number of new HIV cases per year; aids_deaths: Total AIDS-related deaths; plhiv: Estimated number of people living with HIV; art_coverage: Percentage receiving antiretroviral therapy (ART); testing_coverage: HIV testing services coverage; causes: Description of likely HIV transmission cause (e.g. unprotected sex, drug use). The dataset structure must strictly follow this column naming convention for the dashboard to render correctly.
 }
 \seealso{
 Useful links:

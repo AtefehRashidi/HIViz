@@ -1,0 +1,34 @@
+---
+title: "Introduction to HIViz"
+output: rmarkdown::html_vignette
+vignette: >
+ %\VignetteIndexEntry{Introduction to HIViz}
+ %\VignetteEngine{knitr::rmarkdown} 
+ %\VignetteEncoding{UTF-8} 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Welcome to HIViz
+This vignette introduces the HIViz package.
+
+## What is HIViz?
+HIViz is a Shiny dashboard application designed for visualizing HIV-related data. ## How to launch the app You can launch the Shiny app directly from R using:
+```r
+library(HIViz)
+launchApp() 
+```
+
+## Using your own data
+
+You can upload your own dataset in Excel (.xlsx) or SPSS (.sav) format in the app.
+
+## Sample data
+
+Alternatively, you can use the included sample data for exploration.
+
+For more information, visit the package GitHub page:
+https://github.com/AtefehRashidi/HIViz
