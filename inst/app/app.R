@@ -338,7 +338,7 @@ output$download_bar <- shiny::downloadHandler(
         dplyr::group_by(age_group) |>
         dplyr::mutate(percent = incidence / sum(incidence) * 100)
       
-  p <- ggplot2::ggplot(df_bar, ggplot2::aes(x = age_group, y = incidence, fill = sex)) +
+p <- ggplot2::ggplot(df_bar, ggplot2::aes(x = age_group, y = incidence, fill = sex)) +
         ggplot2::geom_bar(stat = "identity", 
                           position = ggplot2::position_dodge(width = 0.9), 
                           alpha = 0.8) +
@@ -376,7 +376,8 @@ filtered_df <- df |>
       dplyr::filter(sex %in% input$sexFilter, age_group %in% input$ageGroupSelect)
     
     word_freq <- base::sort(base::table(filtered_df$causes), decreasing = TRUE)
-    base::set.seed(123)
+    oldpar <- graphics::par(no.readonly = TRUE)
+    on.exit(graphics::par(oldpar))
     graphics::par(mar = base::rep(0, 4))
     wordcloud::wordcloud(
       words = base::names(word_freq),
@@ -399,11 +400,14 @@ output$download_wordcloud <- shiny::downloadHandler(
       df <- user_data()
       filtered_df <- df |> 
         dplyr::filter(sex %in% input$sexFilter, age_group %in% input$ageGroupSelect)
-      
+    
       word_freq <- base::sort(base::table(filtered_df$causes), decreasing = TRUE)
       grDevices::png(file, width = 1200, height = 800, res = 150)
+      oldpar <- graphics::par(no.readonly = TRUE)
+      on.exit({
+        graphics::par(oldpar)
+        }, add = TRUE)
       graphics::par(mar = base::rep(0, 4))
-      base::set.seed(123)
       wordcloud::wordcloud(
         base::names(word_freq), 
         word_freq,
