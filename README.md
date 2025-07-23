@@ -33,16 +33,6 @@ All column names must be spelled exactly as listed. The causes column
 should contain clear, human-readable labels for transmission modes.
 
 
-## Installation
-
-The development version of the 'HIViz' package is available for installation. You can install it from 
-[Github](https://github.com/Atefehrashidi/HIViz) using:
-
-``` r
-# install.packages("remotes")
-remotes::install_github("AtefehRashidi/HIViz")
-```
-
 
 ## Installation
 
@@ -55,6 +45,12 @@ install.packages("pak")
 # then install HIViz from GitHub:
 pak::pak("AtefehRashidi/HIViz")
 ```
+or
+``` r
+# install.packages("remotes")
+remotes::install_github("AtefehRashidi/HIViz")
+```
+
 Then run the Shiny App with:
 
 ``` r
