@@ -1,5 +1,5 @@
 
-# 📊 HIViz  <img src="man/figures/hex.png" align="right" width="22%"/>
+# HIViz  <img src="man/figures/hex.png" align="right" width="22%"/>
 
 An R package for interactive visualization and exploration of key
 HIV/AIDS indicators, including prevalence, incidence, mortality, and
@@ -12,7 +12,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/HIViz)
 ![License](https://img.shields.io/badge/license-GPL--3-yellow?style=flat)
 
 <!-- badges: end -->
-## 📁 Required Dataset Structure
+##  Required Dataset Structure
 
 The input dataset must include the following columns with exact names:
 
@@ -59,7 +59,7 @@ HIViz::launchApp()
 You can test the dashboard with the built-in `sample_data`.
 
 
-## 🤝 Contributing
+##  Contributing
 
 Issues and pull requests are welcome. Please open an issue to report
 bugs or suggest enhancements.
